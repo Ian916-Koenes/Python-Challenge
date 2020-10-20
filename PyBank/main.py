@@ -20,10 +20,11 @@ with open(csvpath) as csvfile:
     print(f"count={count}")
 
     net = 0
+    P_L = 0
     for row in csvreader:
-       P_L = int(row)
-net == net + P_L
-print(f"Net Profit Loss = {net} ")
+       P_L = int(row, 2)
+       net = net + P_L
+    print(f"Net Profit Loss = {net} ")
    
 
         
