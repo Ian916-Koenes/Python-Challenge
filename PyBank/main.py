@@ -1,4 +1,4 @@
-#Import os module 
+# #Import os module 
 import os
 import csv
 
@@ -13,17 +13,15 @@ with open(csvpath) as csvfile:
     csv_header=next(csvreader)
 
     count = 0
-    for row in csvreader:
-        print(row)
-        count +=1
-
-    print(f"count={count}")
-
     net = 0
     P_L = 0
     for row in csvreader:
-       P_L = int(row, 2)
-       net = net + P_L
+        print(row)
+        count +=1
+        P_L = int(row[1])
+        net = net + P_L
+
+    print(f"count={count}")
     print(f"Net Profit Loss = {net} ")
    
 
