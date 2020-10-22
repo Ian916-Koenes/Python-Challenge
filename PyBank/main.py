@@ -55,11 +55,30 @@ with open(csvpath) as csvfile:
     #print total profit/loss
     #print highest decrease and date
     #print highest increase and date
-    print(Average_Change)
-    print(f"count={count}")
-    print(f"Net Profit Loss = {net} ")
-    print(f"Minimum_Change = {Min_Date} {Min_Change}")
-    print(f"Maximum_Change = {Max_Date} {Max_Change}")
+    print("Financial Analysis")
+    print("---------------------------")
+    print(f"Total Months: {count}")
+    print(f"Total: ${net} ")
+    print(f"Average Change: ${Average_Change}")
+    print(f"Greatest Increase in Profits = {Max_Date} (${Max_Change})")
+    print(f"Greatest Decrease in Profits = {Min_Date} (${Min_Change})")
+    
+
+#Set export path 
+export_txt = os.path.join("analysis", "report.txt")
+
+#create and open a new .txt file in write mode
+with open(export_txt, "w") as txtfile:
+    #input all results in the same style
+    #remember to add "\n" for new line
+    txtfile.write("Financial Analysis " "\n")
+    txtfile.write("---------------------------" "\n")
+    txtfile.write(f"Total Months: {count}" "\n")
+    txtfile.write(f"Total: ${net} " "\n")
+    txtfile.write(f"Average Change: ${Average_Change}" "\n")
+    txtfile.write(f"Greatest Increase in Profits = {Max_Date} (${Max_Change})" "\n")
+    txtfile.write(f"Greatest Decrease in Profits = {Min_Date} (${Min_Change})" "\n")
+
 
    
 
