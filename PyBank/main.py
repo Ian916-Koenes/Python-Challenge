@@ -44,9 +44,11 @@ with open(csvpath) as csvfile:
         Prior_P_L = P_L
     Average_Change = sum(Budget_List[1:])/len(Budget_List[1:]) 
    #find and caculate highest decrease change
+    print(Budget_List)
     Min_Change = min(Budget_List)
-    Min_Position = [Budget_List].index(Min_Change)
-    Min_Date = Date_List(Min_Position)
+    print(Min_Change)
+    Min_Position = Budget_List.index(Min_Change)
+    Min_Date = Date_List[Min_Position]
     #print average change
     #print total number of months 
     #print total profit/loss
