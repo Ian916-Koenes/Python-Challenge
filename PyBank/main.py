@@ -18,14 +18,12 @@ with open(csvpath) as csvfile:
     Average = 0
     Change = 0
     Prior_P_L = 0
-    #Sum_Change = 0
     Budget_List = 0
     Averge_Change = 0
     Date_List = 0
     Date_List = []
     Budget_List = []
     for row in csvreader:
-        #print(row)
         #calculate row number
         count +=1
         #identify profit/loss location
@@ -39,25 +37,27 @@ with open(csvpath) as csvfile:
         #append lists
         Budget_List.append(Change)
         Date_List.append(Date)
-        #Sum_Change = Sum_Change + Change
         #create loop
         Prior_P_L = P_L
+        #Calculate the average change
     Average_Change = sum(Budget_List[1:])/len(Budget_List[1:]) 
    #find and caculate highest decrease change
-    print(Budget_List)
     Min_Change = min(Budget_List)
-    print(Min_Change)
+    Max_Change = max(Budget_List)
     Min_Position = Budget_List.index(Min_Change)
+    Max_Position = Budget_List.index(Max_Change)
     Min_Date = Date_List[Min_Position]
+    Max_Date = Date_List[Max_Position]
     #print average change
     #print total number of months 
     #print total profit/loss
-    #print highest decrease
+    #print highest decrease and date
+    #print highest increase and date
     print(Average_Change)
     print(f"count={count}")
     print(f"Net Profit Loss = {net} ")
-    print(Budget_List)
     print(f"Minimum_Change = {Min_Date} {Min_Change}")
+    print(f"Maximum_Change = {Max_Date} {Max_Change}")
 
    
 
