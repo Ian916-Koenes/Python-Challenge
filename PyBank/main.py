@@ -12,6 +12,7 @@ with open(csvpath) as csvfile:
     print(csvpath)
     csv_header=next(csvreader)
 
+#create variables 
     count = 0
     net = 0
     P_L = 0
@@ -21,6 +22,7 @@ with open(csvpath) as csvfile:
     Budget_List = 0
     Averge_Change = 0
     Date_List = 0
+    #create lists 
     Date_List = []
     Budget_List = []
     for row in csvreader:
@@ -37,11 +39,11 @@ with open(csvpath) as csvfile:
         #append lists
         Budget_List.append(Change)
         Date_List.append(Date)
-        #create loop
+        #Identifying the previous value for the nect loop
         Prior_P_L = P_L
         #Calculate the average change
     Average_Change = sum(Budget_List[1:])/len(Budget_List[1:]) 
-   #find and caculate highest decrease change
+   #find and caculate highest decrease and highest increase change
     Min_Change = min(Budget_List)
     Max_Change = max(Budget_List)
     Min_Position = Budget_List.index(Min_Change)
