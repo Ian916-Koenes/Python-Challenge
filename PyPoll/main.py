@@ -44,6 +44,8 @@ with open(csvpath) as csvfile:
     print(Candidate_List_Length)
     #
     Pos = 0
+    Winner = 0 
+    Winner_Count = 0
     #
     for Pos in range(0, Candidate_List_Length):
       #
@@ -55,24 +57,13 @@ with open(csvpath) as csvfile:
       #
       print(f"{Candidate}: {Candidate_Pct}% ({Vote_Count})")
       #
+      if Vote_Count > Winner_Count:
+        Winner = Candidate
+        Winner_Count = Vote_Count
       Pos += 1
+    print(f"Winner: {Winner}")
     
-    #for x in str(unique_list):
-      #Candidate = unique_list.append(Candidate_List_Pos)
-    #for row in csvreader:
-        #if Candidates == Candidate:
-           #Candidate_Count += 1
-    #print(f"Candidate_Count = {Candidate_Count}")
-   # Candidate_Pct = Candidate_Count / count *100
-    #print(f"{Candidate}: {Candidate_Pct}% ({Candidate_Count})")
-    #Candidate_list_Pos =+ 1    
     
-    #print(f"unique_list={unique_list}")
-    #print(*unique_list, sep = "\n")
-    #print(unique_list[0])
-    #print(unique_list[1])
-    #print(unique_list[2])
-    #print(unique_list[3])
 
 
 
