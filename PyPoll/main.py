@@ -13,34 +13,54 @@ with open(csvpath) as csvfile:
     csv_header=next(csvreader)
 
     count = 0
-    #Votes = 0
+    Votes = 0
     Candidates = 0
-    #Vote_List = []
-    #Candidate_List = []
     unique_list = [] 
 
     for row in csvreader:
       count += 1
       
-      #Votes = int(row[0])
       # function to get unique values 
-      def unique(list1): 
+       
   
     # intilize a null list 
       
       
-    # traverse for all elements 
-        for Candidates in list1: 
-        # check if exists in unique_list or not 
-          Candidates = str(row[2])
-          if x not in unique_list: 
-            unique_list.append(Candidates) 
-    # print list 
-          for Candidates in unique_list: 
+    # traverse for all elements  
+      # check if exists in unique_list or not 
+      Candidates = str(row[2])
+      if Candidates not in unique_list: 
+        unique_list.append(Candidates)
+             
         
 
-            print(f"count={count}")
-            print(f"Candidates={Candidates}")
+    print("Election Results")
+    print("--------------------------------------")
+    print(f"Total Votes: {count}")
+    print("---------------------------")
+    
+    Candidate_List_Length = len(unique_list)
+    Candidate_List_Pos = 0
+    Candidate_Count = 0
+    Candidate_Pct = 0.00000
+    Candidate = 0
+
+    for x in str(Candidate_List_Length):
+      Candidate = unique_list.append(Candidate_List_Pos)
+      for row in csvreader:
+            if Candidates == Candidate:
+              Candidate_Count += 1
+      Candidate_Pct = Candidate_Count / count *100
+      print(f"{Candidate}: {Candidate_Pct}% {Candidate_Count}")
+      Candidate_list_Pos =+ 1    
+    
+    #print(f"unique_list={unique_list}")
+    #print(*unique_list, sep = "\n")
+    #print(unique_list[0])
+    #print(unique_list[1])
+    #print(unique_list[2])
+    #print(unique_list[3])
+
 
 
 
