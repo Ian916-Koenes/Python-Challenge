@@ -17,28 +17,30 @@ with open(csvpath) as csvfile:
     Candidates = 0
     #Vote_List = []
     #Candidate_List = []
+    unique_list = [] 
 
     for row in csvreader:
       count += 1
-      Candidates = str(row[2])
+      
       #Votes = int(row[0])
       # function to get unique values 
       def unique(list1): 
   
     # intilize a null list 
-      unique_list = [] 
+      
       
     # traverse for all elements 
-      for x in list1: 
+        for Candidates in list1: 
         # check if exists in unique_list or not 
-        if x not in unique_list: 
-            unique_list.append(candidates) 
+          Candidates = str(row[2])
+          if x not in unique_list: 
+            unique_list.append(Candidates) 
     # print list 
-    for x in unique_list: 
-        print(Candidates)
+          for Candidates in unique_list: 
+        
 
-    print(f"count={count}")
-
+            print(f"count={count}")
+            print(f"Candidates={Candidates}")
 
 
 
