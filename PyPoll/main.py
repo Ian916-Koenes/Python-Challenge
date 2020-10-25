@@ -48,21 +48,7 @@ with open(csvpath) as csvfile:
     #Create variables to detemrine the winner
     Winner = 0 
     Winner_Count = 0
-    #Set up a lop to calculate the results and determine a winner
-    for Pos in range(0, Candidate_List_Length):
-      Candidate = unique_list[Pos]
-      Vote_Count=unique_count[Pos]
-      Candidate_Pct = Vote_Count / count*100
-      #Print the results 
-      print(f"{Candidate}: {Candidate_Pct}% ({Vote_Count})")
-      #Calutate and determine the winner, print the winner 
-      if Vote_Count > Winner_Count:
-        Winner = Candidate
-        Winner_Count = Vote_Count
-      Pos += 1
-    print(f"Winner: {Winner}")
-
-#Set export path 
+    #Set export path 
 export_txt = os.path.join("analysis.txt", "report.txt")
     #create and open a new .txt file in write mode
 with open(export_txt, "w") as txtfile:
@@ -72,8 +58,24 @@ with open(export_txt, "w") as txtfile:
     txtfile.write("---------------------------" "\n")
     txtfile.write(f"Total Votes: {count}" "\n")
     txtfile.write(f"--------------------------" "\n")
-    txtfile.write(f"{Candidate}: {Candidate_Pct}% ({Vote_Count})", sep = "\n")
+    #Set up a lop to calculate the results and determine a winner
+    for Pos in range(0, Candidate_List_Length):
+      Candidate = unique_list[Pos]
+      Vote_Count=unique_count[Pos]
+      Candidate_Pct = Vote_Count / count*100
+      #Print the results 
+      print(f"{Candidate}: {Candidate_Pct}% ({Vote_Count})")
+      #export candidates, individual percentage, and individual vote count
+      txtfile.write(f"{Candidate}: {Candidate_Pct}% ({Vote_Count})" "\n")
+      #Calutate and determine the winner, print the winner 
+      if Vote_Count > Winner_Count:
+        Winner = Candidate
+        Winner_Count = Vote_Count
+      Pos += 1
+    print(f"Winner: {Winner}")
+    #export winner
     txtfile.write(f"Winner: {Winner}""\n")
+
     
     
     
